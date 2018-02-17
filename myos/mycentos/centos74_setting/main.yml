@@ -77,10 +77,10 @@
          state=started
          enabled=yes
 
-    - name: Ansible mysql modules need install packages
-      yum:
-      name: MySQL-python
-      state: present
+#    - name: Ansible mysql modules need install packages
+#      yum:
+#      name: MySQL-python
+#      state: present
 
     - name: install ruby dependencies
       yum: name={{item}} enablerepo=remi,epel state=present
