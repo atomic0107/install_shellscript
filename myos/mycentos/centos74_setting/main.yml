@@ -2,7 +2,7 @@
 - hosts: localhost
   become: yes
   vars:
-    - ruby_version: 2.3.1
+    - ruby_version: 2.4.1
     - python_version: 3.5.2
   tasks:
     - name: disable firewalld
@@ -76,7 +76,6 @@
          name=mysqld
          state=started
          enabled=yes
-
 #    - name: Ansible mysql modules need install packages
 #      yum:
 #      name: MySQL-python
@@ -126,6 +125,9 @@
       register: rbuild_present
       ignore_errors: yes
       become: no
+
+
+
     - name: git clone ruby-build
       git: repo=https://github.com/sstephenson/ruby-build.git dest=/home/vagrant/.rbenv/plugins/ruby-build
       when: rbuild_present.rc != 0
@@ -143,6 +145,7 @@
       register: ruby_installed
       ignore_errors: yes
       become: no
+
     - name: install ruby
       shell: /bin/bash -lc "rbenv install {{ruby_version}} && rbenv rehash && rbenv global {{ruby_version}}"
       when: ruby_installed.rc != 0
