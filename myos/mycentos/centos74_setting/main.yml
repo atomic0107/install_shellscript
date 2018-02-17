@@ -58,10 +58,7 @@
     - name: install mysql repository
       #command: rpm -Uvh --force http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
       command: rpm -Uvh --force http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-<<<<<<< HEAD
-
-=======
->>>>>>> fe28ca65708097ba706236dd34de6f8151a6c3f5
+      
     - name: install mysql
       yum: name={{item}} state=present
       with_items:
