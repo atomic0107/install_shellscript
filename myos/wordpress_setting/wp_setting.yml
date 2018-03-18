@@ -29,7 +29,7 @@
 
       - name: phpテストページの作成
         copy: >
-          src=roles/phpinfo.php
+          src=roles/php_info.php
           dest=/var/www/html/phpinfo.php
 
       - name: httpサービスの再起動
