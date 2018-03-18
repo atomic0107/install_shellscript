@@ -2,7 +2,7 @@
 - hosts: localhost
   become: yes
   vars:
-    - ruby_version: 2.2.4
+    - ruby_version: 2.3.1
     - python_version: 3.5.2
   tasks:
     - name: disable firewalld
