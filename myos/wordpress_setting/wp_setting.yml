@@ -1,6 +1,6 @@
 ---
 - name: wordpress環境構築
-  hosts: localhost
+  hosts: wordpress-servers
   become: yes
   vars:
     wordpress_url: https://ja.wordpress.org/wordpress-4.4.2-ja.tar.gz

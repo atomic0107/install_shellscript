@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: wordpress-servers
   become: yes
   vars:
     - ruby_version: 2.3.1
